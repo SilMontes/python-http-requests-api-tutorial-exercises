@@ -1,13 +1,11 @@
 import requests
 import json
-payload={
+request_body={
     "id":2323,
     "title":"Very big project"
 }
-headers={
-    "Content-type":"application/json"
-}
-resp = requests.post("https://assets.breatheco.de/apis/fake/sample/save-project-json.php",
-    data=json.dumps(payload),
+headers={"Content-Type":"application/json"}
+
+resp = requests.post("https://assets.breatheco.de/apis/fake/sample/save-project-json.php", data=json.dumps(request_body),
     headers=headers)
 print(resp.text)
