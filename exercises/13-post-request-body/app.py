@@ -6,6 +6,6 @@ request_body={
 }
 headers={"Content-Type":"application/json"}
 
-resp = requests.post("https://assets.breatheco.de/apis/fake/sample/save-project-json.php", data=json.dumps(request_body),
+resp = requests.post("https://assets.breatheco.de/apis/fake/sample/save-project-json.php", json=json.dumps(request_body),
     headers=headers)
 print(resp.text)
