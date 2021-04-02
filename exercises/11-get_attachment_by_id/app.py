@@ -17,3 +17,17 @@ def get_attachment_by_id(attachment_id):
     
 
 print(get_attachment_by_id(137))
+
+def get_attachment_by_id(attachment_id):
+    # your code here
+    reponse=requests.get("https://assets.breatheco.de/apis/fake/sample/weird_portfolio.php")
+    data=reponse.json()
+    for post in data["posts"]:
+        for items in post:
+            if "attachments" in items:
+                for element in post["attachments"]:
+                    if element["id"] == attachment_id:
+                        return element["title"]
+    
+
+print(get_attachment_by_id(137))
